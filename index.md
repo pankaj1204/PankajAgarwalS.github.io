@@ -7,30 +7,76 @@
 <body>
 
   <form>
-    <input type="text" id="display" disabled>
-    <br>
-    <br>
-    <input type="button" value="1" onclick="document.getElementById('display').value+='1'">
-    <input type="button" value="2" onclick="document.getElementById('display').value+='2'">
-    <input type="button" value="3" onclick="document.getElementById('display').value+='3'">
-    <input type="button" value="+" onclick="document.getElementById('display').value+='+'">
-    <br>
-    <input type="button" value="4" onclick="document.getElementById('display').value+='4'">
-    <input type="button" value="5" onclick="document.getElementById('display').value+='5'">
-    <input type="button" value="6" onclick="document.getElementById('display').value+='6'">
-    <input type="button" value="-" onclick="document.getElementById('display').value+='-'">
-    <br>
-    <input type="button" value="7" onclick="document.getElementById('display').value+='7'">
-    <input type="button" value="8" onclick="document.getElementById('display').value+='8'">
-    <input type="button" value="9" onclick="document.getElementById('display').value+='9'">
-    <input type="button" value="*" onclick="document.getElementById('display').value+='*'">
-    <br>
-    <input type="button" value="c" onclick="document.getElementById('display').value=''">
-    <input type="button" value="0" onclick="document.getElementById('display').value+='0'">
-    <input type="button" value="=" onclick="document.getElementById('display').value=eval(document.getElementById('display').value)">
-    <input type="button" value="/" onclick="document.getElementById('display').value+='/'">
-    <br>
+    <div class="calculator">
+  <div class="display">0</div>
+  <div class="buttons">
+    <button class="clear">C</button>
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    <button class="operator">/</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button class="operator">*</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button class="operator">-</button>
+    <button>0</button>
+    <button>.</button>
+    <button class="equal">=</button>
+    <button class="operator">+</button>
+  </div>
+</div>
   </form>
+.calculator {
+  width: 300px;
+  height: 400px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.display {
+  width: 100%;
+  height: 80px;
+  font-size: 40px;
+  text-align: right;
+  padding: 10px;
+  background-color: #222;
+  border: none;
+  color: white;
+}
+
+.buttons {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.buttons button {
+  width: 25%;
+  height: 60px;
+  font-size: 20px;
+  background-color: #555;
+  color: white;
+  border: none;
+}
+
+.operator {
+  background-color: #ffa500;
+}
+
+.equal {
+  background-color: #00bfff;
+}
+
+.clear {
+  background-color: #dc143c;
+}
 
 </body>
 </html>
