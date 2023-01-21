@@ -6,6 +6,27 @@
 </head>
 <style>
 
+.inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.operand {
+    width: 45%;
+    height: 25px;
+    font-size: 20px;
+    margin-right: 5%;
+    padding: 5px;
+    text-align: right;
+}
+
+select {
+    width: 20%;
+    height: 30px;
+    font-size: 20px;
+    padding: 5px;
+}
 
   .calculator {
   width: 300px;
@@ -60,26 +81,37 @@
   <form>
     <div class="calculator">
   <div class="display">0</div>
+  <div class="inputs">
+    <input type="text" id="operand1" class="operand" placeholder="Enter a number">
+    <input type="text" id="operand2" class="operand" placeholder="Enter a number">
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+  </div>
   <div class="buttons">
-    <button class="clear">C</button>
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
-    <button class="operator">/</button>
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
-    <button class="operator">*</button>
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button class="operator">-</button>
-    <button>0</button>
-    <button>.</button>
-    <button class="equal">=</button>
-    <button class="operator">+</button>
+    <button class="clear" onclick="clearInput()">C</button>
+    <button onclick="addNumber('7')">7</button>
+    <button onclick="addNumber('8')">8</button>
+    <button onclick="addNumber('9')">9</button>
+    <button class="operator" onclick="addOperator('/')">/</button>
+    <button onclick="addNumber('4')">4</button>
+    <button onclick="addNumber('5')">5</button>
+    <button onclick="addNumber('6')">6</button>
+    <button class="operator" onclick="addOperator('*')">*</button>
+    <button onclick="addNumber('1')">1</button>
+    <button onclick="addNumber('2')">2</button>
+    <button onclick="addNumber('3')">3</button>
+    <button class="operator" onclick="addOperator('-')">-</button>
+    <button onclick="addNumber('0')">0</button>
+    <button onclick="addDecimal()">.</button>
+    <button class="equal" onclick="calculate()">=</button>
+    <button class="operator" onclick="addOperator('+')">+</button>
   </div>
 </div>
+
   </form>
 
 
