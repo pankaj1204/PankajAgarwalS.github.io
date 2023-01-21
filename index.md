@@ -30,6 +30,11 @@
   </div>
 </div>
   </form>
+
+
+</body>
+</html>
+
 .calculator {
   width: 300px;
   height: 400px;
@@ -77,6 +82,3 @@
 .clear {
   background-color: #dc143c;
 }
-
-</body>
-</html>
