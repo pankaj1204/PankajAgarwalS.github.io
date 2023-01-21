@@ -1,6 +1,8 @@
 <html>
 <head>
-  <title>Calculator</title>
+  <title>
+    Calculator
+  </title>
 </head>
 <body>
 
