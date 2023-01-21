@@ -9,6 +9,7 @@
   <form>
     <input type="text" id="display" disabled>
     <br>
+    <br>
     <input type="button" value="1" onclick="document.getElementById('display').value+='1'">
     <input type="button" value="2" onclick="document.getElementById('display').value+='2'">
     <input type="button" value="3" onclick="document.getElementById('display').value+='3'">
