@@ -4,16 +4,27 @@
     <title>Photo Gallery</title>
     <style>
         /* CSS for styling the gallery */
+        body {
+            background-color: #484848; /* Set the background color to a solid gray */
+        }
+        h1 {
+            text-align: center;
+            color: #fff; /* Set the text color to white */
+        }
         .photo-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            background-color: #fff; /* Set the background color of the grid to white */
+            padding: 20px; /* Add some padding around the grid */
+            border-radius: 10px; /* Add rounded corners to the grid */
         }
         .photo-grid img {
             width: 300px;
             height: 200px;
             margin: 10px;
             object-fit: cover;
+            border-radius: 10px; /* Add rounded corners to the images */
         }
         .photo-caption {
             width: 300px;
@@ -21,8 +32,10 @@
             font-size: 14px;
             font-style: italic;
             margin-top: 5px;
+            color: #484848; /* Set the text color of the captions to gray */
         }
     </style>
+  </head>
   </head>
   <body>
     <h1>Photo Gallery</h1>
@@ -39,6 +52,7 @@
             <img src="image3.jpg" alt="Image 3">
             <div class="photo-caption">Caption for Image 3</div>
         </div>
+      <br>
         <div class="photo">
             <img src="image4.jpg" alt="Image 4">
             <div class="photo-caption">Caption for Image 4</div>
