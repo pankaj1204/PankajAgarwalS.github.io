@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
     <title>Photo Gallery</title>
@@ -29,7 +28,7 @@
     <div class="photo-grid">
         <div class="photo">
             <img src="image1.jpg" alt="Image 1">
-            <div class="photo-caption">Caption for Image 1</div>
+            <div class="photo-caption">The Moon's Soft Light Shines On A Tranquil Night</div>
         </div>
         <div class="photo">
             <img src="image2.jpg" alt="Image 2">
