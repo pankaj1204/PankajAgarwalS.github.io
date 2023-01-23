@@ -1,71 +1,67 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <title>Typing Speed Game</title>
-  <script>
-    // Set up global variables
-    var startTime, endTime;
-    var textBox = document.getElementById("text-box");
-    var timer = document.getElementById("timer");
-    var wpm = document.getElementById("wpm");
-    var words = ["hello", "world", "typing", "speed", "game"];
-    var currentWord = 0;
+  <head>
+    <title>Typing Speed Game</title>
+    <script>
+      // Set up global variables
+      var startTime, endTime;
+      var textBox = document.getElementById("text-box");
+      var timer = document.getElementById("timer");
+      var wpm = document.getElementById("wpm");
+      var promptText = "Type this text as fast and accurately as you can: ";
+      var words = "hello world typing speed game";
+      var intervalId;
 
-    // Start the game
-    function startGame() {
-      // Set the first word
-      textBox.value = "";
-      document.getElementById("word").innerHTML = words[currentWord];
-      
-      // Start the timer
-      startTime = new Date();
-      timer.innerHTML = "Time: 0 seconds";
-      setInterval(updateTimer, 1000);
-    }
+      // Start the game
+      function startGame() {
+        // Disable the button
+        document.getElementById("start-button").disabled = true;
+        // Display the prompt
+        document.getElementById("prompt").innerHTML = promptText + words;
+        // Start the timer
+        startTime = new Date();
+        timer.innerHTML = "Time: 0 seconds";
+        intervalId = setInterval(updateTimer, 1000);
+      }
 
-    // Update the timer
-    function updateTimer() {
-      var currentTime = new Date();
-      var time = (currentTime - startTime) / 1000;
-      timer.innerHTML = "Time: " + time + " seconds";
-    }
+      // Update the timer
+      function updateTimer() {
+        var currentTime = new Date();
+        var time = (currentTime - startTime) / 1000;
+        timer.innerHTML = "Time: " + time.toFixed(2) + " seconds";
+      }
 
-    // Check the typed word
-    function checkWord() {
-      if (textBox.value == words[currentWord]) {
-        // Correct word
-        currentWord++;
-        textBox.value = "";
-        if (currentWord >= words.length) {
+      // Check the typed text
+      function checkText() {
+        if (textBox.value == words) {
           // End the game
           endGame();
-        } else {
-          // Next word
-          document.getElementById("word").innerHTML = words[currentWord];
         }
       }
-    }
 
-    // End the game
-    function endGame() {
-      endTime = new Date();
-      var totalTime = (endTime - startTime) / 1000;
-      var typedWords = words.length;
-      var speed = typedWords / (totalTime / 60);
-      wpm.innerHTML = "Speed: " + speed + " words per minute";
-    }
-  </script>
-</head>
-<body>
-  <h1>Typing Speed Game</h1>
-  <button onclick="startGame()">Start</button>
-  <br>
-  <br>
-  <div id="word"></div>
-  <br>
-  <textarea id="text-box" oninput="checkWord()"></textarea>
-  <br>
-  <br>
-  <div id="timer"></div>
-  <div id="wpm"></div>
-</body>
+      // End the game
+      function endGame() {
+        clearInterval(intervalId);
+        endTime = new Date();
+        var totalTime = (endTime - startTime) / 1000;
+        var typedWords = words.split(" ").length;
+        var speed = typedWords / (totalTime / 60);
+        wpm.innerHTML = "Speed: " + speed.toFixed(2) + " words per minute";
+        document.getElementById("start-button").disabled = false;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Typing Speed Game</h1>
+    <button id="start-button" onclick="startGame()">Play</button>
+    <br>
+    <br>
+    <div id="prompt"></div>
+    <br>
+    <textarea id="text-box" oninput="checkText()"></textarea>
+    <br>
+    <br>
+    <div id="timer"></div>
+    <div id="wpm"></div>
+  </body>
 </html>
