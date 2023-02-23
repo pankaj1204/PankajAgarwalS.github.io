@@ -3,7 +3,7 @@ function check(form) {
     password = new Array("admin1", "admin2", "members");
 
 	if(form.userid.value == username[0] && form.pswrd.value == password[0]||form.userid.value == username[1] && form.pswrd.value == password[1]) {
-		location.replace('admin/admiin.html')/* The Administrator homepage */
+		location.replace('admin/admin.html')/* The Administrator homepage */
 	}
 	else if(form.userid.value == username[2] && form.pswrd.value == password[2]) {
 		location.replace('member/member.html')/* The members homepage */
